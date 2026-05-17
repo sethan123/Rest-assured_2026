@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 import static io.restassured.RestAssured.*;
 
-public class Task_1 {
+public class Task_get {
 	
 	
 	@Test

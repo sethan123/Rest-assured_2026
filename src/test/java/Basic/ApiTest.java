@@ -1,17 +1,20 @@
 package Basic;
 
 import io.restassured.RestAssured;
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+
+import static io.restassured.RestAssured.given;
 
 public class ApiTest {
+
 	public static void main(String[] args) {
-		RestAssured.baseURI = "https://reqres.in/api";
-		
+
+		RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+
 		given()
-		.when()
-		.get("collections/products/records?project_id=13190")
-		.then()
-		.statusCode(200);
+				.when()
+				.get("/posts/1")
+				.then()
+				.statusCode(200)
+				.log().all();
 	}
 }
